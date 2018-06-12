@@ -1,0 +1,127 @@
+/* Colors - follow Google Material Design */
+/* Reset */
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+main {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+hr {
+  height: 1px;
+  color: #f1f1f1;
+  background: #f1f1f1;
+  font-size: 0;
+  border: 0;
+}
+/* Header */
+header {
+  background-color: #3E2723;
+}
+header .logo {
+  display: inline-block;
+}
+header .logo a {
+  display: block;
+  color: #ffffff;
+  padding: 20px;
+}
+header nav {
+  display: inline-block;
+}
+header nav ul {
+  display: inline-block;
+}
+header nav ul li {
+  display: inline-block;
+}
+header nav ul li a {
+  display: block;
+  padding: 20px;
+  color: #ffffff;
+}
+header nav ul li a:hover {
+  color: #ffffff;
+  background-color: #1793d1;
+}
+ul.players {
+  text-align: center;
+}
+ul.players li {
+  display: inline-block;
+}
+/* Card Block*/
+.card-block {
+  text-align: center;
+  background-color: #ffffff;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 400px;
+  width: 200px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 25px -6px #777;
+  -moz-box-shadow: 0 3px 25px -6px #777;
+  box-shadow: 0 3px 25px -6px #777;
+}
+.card-block img {
+  width: 40px;
+}
+.player .player-name {
+  font-size: 24px;
+}
+.player .player-points {
+  font-size: 18px;
+}
+.team-card {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 20px;
+  border: 1px solid #f1f1f1;
+  width: 40%;
+  -webkit-box-shadow: 0 3px 25px -6px #777;
+  -moz-box-shadow: 0 3px 25px -6px #777;
+  box-shadow: 0 3px 25px -6px #777;
+}
+.team-card img {
+  display: inline-block;
+  width: 70px;
+  vertical-align: middle;
+}
+.team-card div.scores {
+  display: inline-block;
+  width: 225px;
+  vertical-align: middle;
+}
+.team-card div.scores span.team-city {
+  font-size: 20px;
+}
+.team-card div.scores span.team-name {
+  font-size: 20px;
+}
+.team-card div.scores p.team-points {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Banner */
+h1.home-welcome {
+  text-align: center;
+  font-size: 50px;
+  line-height: 50px;
+  margin: 30px 0;
+  color: #ffffff;
+}
+footer {
+  background-color: #333333;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+footer p {
+  color: #ffffff;
+  text-align: center;
+}

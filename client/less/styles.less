@@ -1,0 +1,154 @@
+/* Colors - follow Google Material Design */
+@white: #ffffff;
+@black: #000000;
+@ltGray: #f1f1f1;
+@dkGray: #333333;
+@ltBrown: #EFEBE9;
+@brown3: #A1887F;
+@brown5: #795548;
+@brown6: #6D4C41;
+@brown7: #5D4037;
+@brown8: #4E342E;
+@brown9: #3E2723;
+@blue3: #45a8da;
+@blue5: #1793d1;
+@blue8: #106692;
+
+/* Reset */
+body {
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+main {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+hr {
+  height: 1px;
+  color: #f1f1f1;
+  background: #f1f1f1;
+  font-size: 0;
+  border: 0;
+}
+
+/* Header */
+header {
+  background-color: @brown9;
+    .logo {
+      display: inline-block;
+        a {
+          display: block;
+          color: @white;
+          padding: 20px;
+        }
+    }
+    nav {
+      display: inline-block;
+        ul {
+          display: inline-block;
+            li {
+              display: inline-block;
+                a {
+                  display: block;
+                  padding: 20px;
+                  color: @white;
+                    &:hover {
+                      color: @white;
+                      background-color: @blue5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ul.players {
+  text-align: center;
+  li {
+    display: inline-block;
+  }
+}
+
+/* Card Block*/
+.card-block {
+  text-align: center;
+  background-color: @white;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 400px;
+  width: 200px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 25px -6px #777;
+  -moz-box-shadow: 0 3px 25px -6px #777;
+   box-shadow: 0 3px 25px -6px #777;
+     img {
+       width: 40px;
+     }
+}
+
+.player {
+    .player-name {
+      font-size: 24px;
+    }
+    .player-points {
+      font-size: 18px;
+    }
+}
+
+.team-card {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 20px;
+  border: 1px solid #f1f1f1;
+  width: 40%;
+  -webkit-box-shadow: 0 3px 25px -6px #777;
+  -moz-box-shadow: 0 3px 25px -6px #777;
+   box-shadow: 0 3px 25px -6px #777;
+    img {
+      display: inline-block;
+      width: 70px;
+      vertical-align: middle;
+    }
+    div.scores {
+      display: inline-block;
+      width: 225px;
+      vertical-align: middle;
+        span.team-city {
+          font-size: 20px;
+        }
+        span.team-name {
+          font-size: 20px;
+        }
+        p.team-points {
+          font-size: 18px;
+          font-weight: bold;
+        }
+    }
+}
+
+/* Banner */
+h1.home-welcome {
+  text-align: center;
+  font-size: 50px;
+  line-height: 50px;
+  margin: 30px 0;
+  color: @white;
+}
+
+footer {
+  background-color: @dkGray;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+    p {
+      color: @white;
+      text-align: center;
+    }
+}
