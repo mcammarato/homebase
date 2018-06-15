@@ -7,7 +7,15 @@ app.controller('pocketCtrl', function($scope, $http){
 
     var data = response.data;
 
-    $scope.res = response.data;
+    // $.each(data.list, function(i){
+    //   data.list[i].given_url
+    //   $scope.given_url = data.list[i].given_url;
+    // });
+
+    $scope.limitNumber = 10;
+
+    $scope.pocketData = response.data.list;
+
 
   }, function(response) {
     console.log(response.statusText);

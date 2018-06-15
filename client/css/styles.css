@@ -56,8 +56,6 @@ ul.players li {
   background-color: #ffffff;
   display: inline-block;
   vertical-align: top;
-  max-width: 400px;
-  width: 200px;
   margin: 20px;
   padding: 20px;
   border: 1px solid #dcdcdc;
@@ -93,7 +91,6 @@ ul.players li {
 }
 .team-card div.scores {
   display: inline-block;
-  width: 225px;
   vertical-align: middle;
 }
 .team-card div.scores span.team-city {
@@ -105,6 +102,21 @@ ul.players li {
 .team-card div.scores p.team-points {
   font-size: 18px;
   font-weight: bold;
+}
+.card-block.pocket {
+  display: block;
+  max-width: 600px;
+  margin: 15px auto;
+}
+.card-block.pocket a {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+.card-block.pocket p {
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
 }
 /* Banner */
 h1.home-welcome {

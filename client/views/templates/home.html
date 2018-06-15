@@ -1,12 +1,10 @@
 <h1 class="home-welcome" ng-controller="homeCtrl">{{welcome}}</h1>
 
-<!-- <section ng-controller="weatherCtrl" class="card-block weather">
+<section ng-controller="weatherCtrl" class="card-block weather">
   <p>{{ temp_f }}</p>
   <p>{{ city }}</p>
 </section>
-
-<hr> -->
-
+<hr />
 <section ng-controller="statsCtrl">
   <div class="game-stats">
     <div class="team-card">
@@ -28,7 +26,6 @@
       </div>
     </div>
   </div>
-  <hr>
   <ul class="players">
     <li ng-repeat="p in playerStats">
       <div data-team="{{ p.TEAM_ABBREVIATION }}" class="card-block player">
@@ -38,4 +35,11 @@
       </div>
     </li>
   </ul>
+</section>
+<hr />
+<section ng-controller="pocketCtrl">
+  <div ng-repeat="p in pocketData | myLimitTo:limitNumber" class="card-block pocket">
+    <a href="{{ p.given_url }}">{{ p.given_title }}</a>
+    <p>{{ p.excerpt }}</p>
+  </div>
 </section>

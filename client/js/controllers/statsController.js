@@ -9,7 +9,6 @@ app.controller('statsCtrl', function($scope, $http){
 
     /* Game Stats */
     var gameStats = data.items[1].items[0];
-    console.log(gameStats);
 
     for (var i in gameStats) {
       $scope.gameStats = gameStats[i];
@@ -33,7 +32,6 @@ app.controller('statsCtrl', function($scope, $http){
 
     /* Player Stats */
     var playerStats = data.items[0].items[0];
-    console.log(playerStats);
 
     for (var i in playerStats) {
       $scope.playerStats = playerStats[i];
