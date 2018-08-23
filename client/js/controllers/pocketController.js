@@ -7,17 +7,27 @@ app.controller('pocketCtrl', function($scope, $http){
 
     var data = response.data;
 
-    // $.each(data.list, function(i){
-    //   data.list[i].given_url
-    //   $scope.given_url = data.list[i].given_url;
-    // });
+    var pocketList = response.data.list;
 
-    $scope.limitNumber = 10;
+    pocketJsonArray = [];
 
-    $scope.pocketData = response.data.list;
+    angular.forEach(pocketList, function(value){
+      item = {};
+      var given_url = value.given_url;
+      var resolved_title = value.resolved_title;
+      var excerpt = value.excerpt;
 
+      item['given_url'] = given_url;
+      item['resolved_title'] = resolved_title;
+      item['excerpt'] = excerpt;
+
+      pocketJsonArray.push(item);
+    });
+
+    var pocketResult = pocketJsonArray.slice(-10);
+    $scope.pocketResult = pocketResult;
 
   }, function(response) {
-    console.log(response.statusText);
+
   });
 });

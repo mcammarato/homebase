@@ -104,19 +104,14 @@ ul.players li {
   font-weight: bold;
 }
 .card-block.pocket {
-  display: block;
-  max-width: 600px;
-  margin: 15px auto;
-}
-.card-block.pocket a {
   display: inline-block;
-  width: 200px;
   vertical-align: top;
+  max-width: 370px;
+  margin: 15px;
+  padding: 20px 60px;
 }
-.card-block.pocket p {
-  display: inline-block;
-  width: 300px;
-  vertical-align: top;
+.card-block.pocket p.excerpt {
+  margin-bottom: 20px;
 }
 /* Banner */
 h1.home-welcome {
@@ -129,7 +124,6 @@ h1.home-welcome {
 footer {
   background-color: #333333;
   padding: 15px 0;
-  position: fixed;
   width: 100%;
   bottom: 0;
 }

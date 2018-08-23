@@ -38,8 +38,8 @@
 </section>
 <hr />
 <section ng-controller="pocketCtrl">
-  <div ng-repeat="p in pocketData | myLimitTo:limitNumber" class="card-block pocket">
-    <a href="{{ p.given_url }}">{{ p.given_title }}</a>
-    <p>{{ p.excerpt }}</p>
+  <div ng-repeat="p in pocketResult track by $index" class="card-block pocket">
+    <p class="excerpt">{{ p.excerpt }}</p>
+    <a href="{{ p.given_url }}">{{ p.resolved_title }}</a>
   </div>
 </section>
