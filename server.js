@@ -18,6 +18,8 @@ app.use('/routes', express.static(__dirname + '/client/js/routes'));
 app.use('/controllers', express.static(__dirname + '/client/js/controllers'));
 // Templates
 app.use('/templates', express.static(__dirname + '/client/views/templates'));
+// Pages
+app.use('/pages', express.static(__dirname + '/client/views/pages'));
 // CSS
 app.use('/css', express.static(__dirname + '/client/css'));
 // less
