@@ -2,6 +2,9 @@ app.controller('pocketCtrl', ['pocketService', '$scope', function (pocketService
 
   $scope.pocketResult = pocketService.returnPocketResults();
 
-  var test = pocketService.returnPocketResults();
-  console.log(test);
+  var pocketPromise = pocketService.returnPocketResults();
+  var pocketResult = '';
+  pocketPromise.then(function(data){
+    $scope.pocketResult = data;
+  })
 }]);

@@ -3,11 +3,11 @@ var gulp  = require('gulp'),
     watch = require('gulp-watch');
 
 gulp.task('less', function(){
-  gulp.src('client/less/*.less')
+  gulp.src('client/assets/source/less/*.less')
     .pipe(less())
-    .pipe(gulp.dest('client/css'))
+    .pipe(gulp.dest('client/assets/dist/css/'))
 });
 
-gulp.task('watch', function(){
-  gulp.watch('client/less/*.less', ['less']);
+gulp.task('default', ['less'], function(){
+  gulp.watch('client/assets/source/less/*.less', ['less']);
 });

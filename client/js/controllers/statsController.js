@@ -29,7 +29,6 @@ app.controller('statsCtrl', function($scope, $http){
     $scope.secondTeamDate = data.items[1].items[0].teamstats[1].URL_DATE;
 
 
-
     /* Player Stats */
     var playerStats = data.items[0].items[0];
 
@@ -37,35 +36,33 @@ app.controller('statsCtrl', function($scope, $http){
       $scope.playerStats = playerStats[i];
     }
 
-    $(document).ready(function(){
-      // Insert Team Logos
-      var player = $('.player');
-      var team = $('.team');
-      function insertTeamLogos() {
-        $.each(player, function() {
-          if ($(this).attr('data-team') == 'GSW') {
-            $(this).find('.team').replaceWith('<img src="images/warriors.png" />');
-          }
-          else if ($(this).attr('data-team') == 'CLE') {
-            $(this).find('.team').replaceWith('<img src="images/cavs.png" />');
-          }
-        })
-
-        $.each(team, function() {
-          if ($(this).attr('data-team') == 'GSW') {
-            $(this).find('.logo').replaceWith('<img src="images/warriors.png" />');
-          }
-          else if ($(this).attr('data-team') == 'CLE') {
-            $(this).find('.logo').replaceWith('<img src="images/cavs.png" />');
-          }
-        })
-      }
-      insertTeamLogos();
-    });
-
-
-
   }, function(response) {
     console.log(response.statusText);
   });
+
+  function insertTeamLogos() {
+    // var players = document.getElementsByClassName('player');
+    // var playersArray = [];
+    // for (var i = 0; i < players.length; i++) {
+    //   playersArray.push(players[i])
+    // };
+    // console.log(playersArray);
+
+    var teams = document.getElementsByClassName('team');
+    var teamsArray = [];
+    for (var i = 0; i < teams.length; i++) {
+      teamsArray.push(teams[i])
+    }
+    teamsArray.forEach(function(element){
+      console.log(element);
+      var teamAttr = element.getAttribute('data-team');
+      console.log(teamAttr);
+      if (teamAttr == 'GSW') {
+        var test = document.querySelector('.logo');
+        console.log(test);
+      }
+    });
+  }
+  insertTeamLogos();
+
 });

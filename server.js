@@ -16,18 +16,22 @@ app.use('/js', express.static(__dirname + '/client/js'));
 app.use('/routes', express.static(__dirname + '/client/js/routes'));
 // Controllers
 app.use('/controllers', express.static(__dirname + '/client/js/controllers'));
+// Services
+app.use('/services', express.static(__dirname + '/client/js/services'));
+// Directives
+app.use('/directives', express.static(__dirname + '/client/js/directives'));
 // Templates
 app.use('/templates', express.static(__dirname + '/client/views/templates'));
 // Pages
 app.use('/pages', express.static(__dirname + '/client/views/pages'));
-// CSS
-app.use('/css', express.static(__dirname + '/client/css'));
-// less
-app.use('/less', express.static(__dirname + '/client/less'));
 // Foundation
 app.use('/foundation', express.static(__dirname + '/node_modules/foundation-sites/dist/css'));
 // Images
-app.use('/images', express.static(__dirname + '/client/images'));
+app.use('/images', express.static(__dirname + '/client/assets/images'));
+// Less
+app.use('/less', express.static(__dirname + '/client/assets/source/less'));
+// Dist
+app.use('/css', express.static(__dirname + '/client/assets/dist/css'));
 
 
 /* Routes
