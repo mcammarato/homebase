@@ -5,9 +5,9 @@ app.config(function($routeProvider, $locationProvider){
     })
     .when('/notes', {
       templateUrl: 'pages/notes.html'
-    })
-    .otherwise({
-      redirectTo: '/home'
     });
+    // .otherwise({
+    //   redirectTo: '/home'
+    // });
     $locationProvider.html5Mode(true);
 });

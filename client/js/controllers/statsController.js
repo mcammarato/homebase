@@ -54,12 +54,9 @@ app.controller('statsCtrl', function($scope, $http){
       teamsArray.push(teams[i])
     }
     teamsArray.forEach(function(element){
-      console.log(element);
       var teamAttr = element.getAttribute('data-team');
-      console.log(teamAttr);
       if (teamAttr == 'GSW') {
         var test = document.querySelector('.logo');
-        console.log(test);
       }
     });
   }

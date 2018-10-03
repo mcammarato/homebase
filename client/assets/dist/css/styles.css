@@ -121,6 +121,11 @@ h1.home-welcome {
   margin: 30px 0;
   color: #ffffff;
 }
+/* To Do */
+.done {
+  text-decoration: line-through;
+  color: #ccc;
+}
 footer {
   background-color: #333333;
   padding: 15px 0;

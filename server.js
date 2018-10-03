@@ -1,7 +1,20 @@
-var express = require('express'),
-    path    = require('path'),
-    proxy   = require('http-proxy-middleware'),
-    app     = express();
+var express     = require('express'),
+    path        = require('path'),
+    proxy       = require('http-proxy-middleware'),
+    morgan      = require('morgan'),
+    bodyParser  = require('body-parser'),
+    multer      = require('multer'),
+    mysql       = require('mysql'),
+    app         = express();
+    router      = express.Router();
+
+
+// HTTP Logs
+app.use(morgan('short'))
+
+// Body Parser
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 /* Static Shortcuts
 ********************/
@@ -33,9 +46,45 @@ app.use('/less', express.static(__dirname + '/client/assets/source/less'));
 // Dist
 app.use('/css', express.static(__dirname + '/client/assets/dist/css'));
 
+/* Connect to mysql
+******************/
+const pool = mysql.createPool({
+  connectionLimit: 10,
+  host: 'localhost',
+  user: 'root',
+  password: 'hexi fate',
+  database: 'todos'
+})
+
+// Get connection
+function getConnection(){
+  return pool
+}
 
 /* Routes
 *********/
+app.use(router);
+
+router.post('/api/todo', function(req, res, next){
+
+  for (var i = 0; i < req.body.length; i++) {
+    todo = req.body[i].title
+    done = req.body[i].done
+  }
+
+  // Write user to db
+  const queryString = 'INSERT IGNORE INTO todos (todo, done) VALUES (?, ?)';
+  getConnection().query(queryString, [todo, done], function(err, results, fields){
+    if (err) {
+      console.log('Failed to insert new todo ' + err);
+      return
+    }
+    console.log('inserted a new todo with id: ' + results.insertId)    
+  })
+    
+  res.end()
+})
+
 
 // Root - Handle serving both client side angular and server side node routes from the same app
 app.use(function(req, res) {
