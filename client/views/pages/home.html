@@ -1,16 +1,20 @@
 <h1 class="home-welcome" ng-controller="homeCtrl">{{welcome}}</h1>
 
-<!-- To Do -->
-<toDo-template></toDo-template>
-<hr / />
-<!-- Weather -->
-<weather-template></weather-template>
-<hr />
-
-<!-- NBA -->
-<nba-template></nba-template>
-<hr />
-
-<!-- Pocket -->
-<pocket-template></pocket-template>
-<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">              
+            <weather-template></weather-template>         
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <toDo-template></toDo-template> 
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <nba-template></nba-template>
+            </div>
+            <div class="col-xs-12">
+                <pocket-template></pocket-template>
+            </div>
+        </div>
+    </div>
+</div>

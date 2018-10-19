@@ -21,6 +21,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // Angular
 app.use('/angular', express.static(__dirname + '/node_modules/angular'));
+// Angular Reesource
+app.use('/angular', express.static(__dirname + '/node_modules/angular-resource'));
 // Angular Route
 app.use('/angular-route', express.static(__dirname + '/node_modules/angular-route'));
 // JS
@@ -63,14 +65,26 @@ function getConnection(){
 
 /* Routes
 *********/
+
+// Get all users
 app.use(router);
 
+router.get('/api/todos', function(req, res){
+  const queryString = 'SELECT * FROM todos.todos'
+
+  getConnection().query(queryString, function(err, results){
+    res.send(results)
+  })
+})
+
+// Post new user
 router.post('/api/todo', function(req, res, next){
 
   for (var i = 0; i < req.body.length; i++) {
     todo = req.body[i].title
     done = req.body[i].done
   }
+
 
   // Write user to db
   const queryString = 'INSERT IGNORE INTO todos (todo, done) VALUES (?, ?)';
@@ -79,10 +93,12 @@ router.post('/api/todo', function(req, res, next){
       console.log('Failed to insert new todo ' + err);
       return
     }
+    // Log out user insert
     console.log('inserted a new todo with id: ' + results.insertId)    
+    // send user back to the client
+    res.send(todo)
   })
-    
-  res.end()
+
 })
 
 

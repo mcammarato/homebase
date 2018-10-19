@@ -1,1 +1,1 @@
-var app = angular.module('Homebase', ['ngRoute']);
+var app = angular.module('Homebase', ['ngRoute', 'ngResource']);

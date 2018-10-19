@@ -1,13 +1,14 @@
-<section ng-controller="todoController">
+<section class="todos" ng-controller="todoController">
+  <p>Todos</p>
   <form name="frm" ng-submit="addTodo()">
     <input type="text" name="newTodo" ng-model="newTodo" required />
-    <button ng-disabled="frm.$invalid">Go</button>
+    <button class="btn-brown" type="submit">Add todo</button>
   </form>
-  <button ng-click="clearCompleted()">Clear Completed</button>
+  <p>{{ todoTest }}</p>
   <ul>
-    <li ng-repeat="todo in toDos">
-      <input type="checkbox" ng-model="todo.done" />
-      <span ng-class="{'done': toDo.done}">{{todo.title}}</span>
-    </li>
+      <li ng-repeat="a in allTodos">
+        <span ng-class="{'done': a.done}">{{a.todo}}</span>
+        <input type="checkbox" ng-model="done" />{{a.done}}
+      </li>
   </ul>
 </section>

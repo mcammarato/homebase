@@ -1,6 +1,7 @@
 /* Colors - follow Google Material Design */
 @white: #ffffff;
 @black: #000000;
+@ltBlack: #333333;
 @ltGray: #f1f1f1;
 @dkGray: #333333;
 @ltBrown: #EFEBE9;
@@ -13,11 +14,22 @@
 @blue3: #45a8da;
 @blue5: #1793d1;
 @blue8: #106692;
+@gray3: #E0E0E0;
+
+.btn-brown {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: @brown5;
+  color: @white;
+  text-align: center;
+  cursor: pointer;
+}
 
 /* Reset */
 body {
   font-family: 'Ubuntu', sans-serif;
-
+  background-color: #fafafa;
 }
 
 main {
@@ -35,12 +47,12 @@ hr {
 
 /* Header */
 header {
-  background-color: @brown9;
+  background-color: @gray3;
     .logo {
       display: inline-block;
         a {
           display: block;
-          color: @white;
+          color: @brown5;
           padding: 20px;
         }
     }
@@ -53,7 +65,7 @@ header {
                 a {
                   display: block;
                   padding: 20px;
-                  color: @white;
+                  color: @brown5;
                     &:hover {
                       color: @white;
                       background-color: @blue5;
@@ -76,9 +88,6 @@ ul.players {
   text-align: center;
   background-color: @white;
   display: inline-block;
-  vertical-align: top;
-  margin: 20px;
-  padding: 20px;
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   -webkit-box-shadow: 0 3px 25px -6px #777;
@@ -100,11 +109,7 @@ ul.players {
 
 .team-card {
   text-align: center;
-  margin: 0 auto;
-  display: block;
-  padding: 20px;
   border: 1px solid #f1f1f1;
-  width: 40%;
   -webkit-box-shadow: 0 3px 25px -6px #777;
   -moz-box-shadow: 0 3px 25px -6px #777;
    box-shadow: 0 3px 25px -6px #777;
@@ -145,11 +150,28 @@ h1.home-welcome {
   text-align: center;
   font-size: 50px;
   line-height: 50px;
-  margin: 30px 0;
-  color: @white;
+  margin-top: 30px;
+  color: @ltBlack;
 }
 
 /* To Do */
+
+section.todos {
+  padding: 50px 30px;
+    p {
+      font-size: 26px;
+    }
+    form {
+      max-width: 100%;
+        input {
+          max-width: 25%;
+          border-radius: 5px;
+        }
+    }
+    ul {
+      margin-top: 30px;
+    }
+}
 
 .done {
   text-decoration: line-through;

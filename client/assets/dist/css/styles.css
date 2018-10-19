@@ -1,7 +1,17 @@
 /* Colors - follow Google Material Design */
+.btn-brown {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: #795548;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
 /* Reset */
 body {
   font-family: 'Ubuntu', sans-serif;
+  background-color: #fafafa;
 }
 main {
   max-width: 1170px;
@@ -16,14 +26,14 @@ hr {
 }
 /* Header */
 header {
-  background-color: #3E2723;
+  background-color: #E0E0E0;
 }
 header .logo {
   display: inline-block;
 }
 header .logo a {
   display: block;
-  color: #ffffff;
+  color: #795548;
   padding: 20px;
 }
 header nav {
@@ -38,7 +48,7 @@ header nav ul li {
 header nav ul li a {
   display: block;
   padding: 20px;
-  color: #ffffff;
+  color: #795548;
 }
 header nav ul li a:hover {
   color: #ffffff;
@@ -55,9 +65,6 @@ ul.players li {
   text-align: center;
   background-color: #ffffff;
   display: inline-block;
-  vertical-align: top;
-  margin: 20px;
-  padding: 20px;
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   -webkit-box-shadow: 0 3px 25px -6px #777;
@@ -75,11 +82,7 @@ ul.players li {
 }
 .team-card {
   text-align: center;
-  margin: 0 auto;
-  display: block;
-  padding: 20px;
   border: 1px solid #f1f1f1;
-  width: 40%;
   -webkit-box-shadow: 0 3px 25px -6px #777;
   -moz-box-shadow: 0 3px 25px -6px #777;
   box-shadow: 0 3px 25px -6px #777;
@@ -118,10 +121,26 @@ h1.home-welcome {
   text-align: center;
   font-size: 50px;
   line-height: 50px;
-  margin: 30px 0;
-  color: #ffffff;
+  margin-top: 30px;
+  color: #333333;
 }
 /* To Do */
+section.todos {
+  padding: 50px 30px;
+}
+section.todos p {
+  font-size: 26px;
+}
+section.todos form {
+  max-width: 100%;
+}
+section.todos form input {
+  max-width: 25%;
+  border-radius: 5px;
+}
+section.todos ul {
+  margin-top: 30px;
+}
 .done {
   text-decoration: line-through;
   color: #ccc;
