@@ -19,6 +19,12 @@ app.controller('todoController', ['$scope', 'toDoService', '$http', function($sc
       })   
     }
 
+    // Delete Todo
+
+    $scope.deleteTodo = function(){
+      $http.post()
+    }
+
 
     $scope.toDos = [
       //{'title': 'first task', 'done': false}
@@ -26,7 +32,6 @@ app.controller('todoController', ['$scope', 'toDoService', '$http', function($sc
 
   // Add new todo
   $scope.addTodo = function(){
-
     $scope.toDos.push({'title': $scope.newTodo, 'done': $scope.done})
     
     $scope.newTodo = '';
