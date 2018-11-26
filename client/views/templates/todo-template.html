@@ -7,8 +7,8 @@
   <p>{{ todoTest }}</p>
   <ul>
       <li ng-repeat="a in allTodos">
-        <span ng-class="{'done': a.done}">{{a.todo}}</span>
-        <input type="checkbox" ng-model="done" />{{a.done}}
+        <span data-id="{{a.id}}">{{a.todo}}</span>        
+        <a class="btn" ng-click="deleteTodo(a.id)">Delete</a>
       </li>
   </ul>
 </section>

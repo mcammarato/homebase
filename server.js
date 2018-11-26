@@ -90,7 +90,7 @@ router.post('/api/todo', function(req, res, next){
   const queryString = 'INSERT IGNORE INTO todos (todo, done) VALUES (?, ?)';
   getConnection().query(queryString, [todo, done], function(err, results, fields){
     if (err) {
-      console.log('Failed to insert new todo ' + err);
+      console.log('Failed to insert new todo ' + err)
       return
     }
     // Log out user insert
@@ -99,6 +99,26 @@ router.post('/api/todo', function(req, res, next){
     res.send(todo)
   })
 
+})
+
+// Delete User
+
+const delteQuery = 'DELETE FROM todos WHERE ID = ?'
+
+router.post('/api/deleteTodo', function(req, res, next){
+
+  // Body parser needs to get deleted todo ID
+  var deletedTodoId = req.body.id
+
+  getConnection().query(delteQuery, [deletedTodoId], function(err, results, field){
+  if (err) {
+    console.log('Failed to delete todo ' + err)
+    return
+  }
+    console.log(results)
+  })
+
+  //res.send()
 })
 
 
