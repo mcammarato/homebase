@@ -14,8 +14,7 @@ app.controller('todoController', ['$scope', 'toDoService', '$http', function($sc
     //loadTodos
     $scope.loadData = function(){
       $http.get('/api/todos').then(function(response){
-        $scope.allTodos = response.data
-        //console.log($scope.allTodos)              
+        $scope.allTodos = response.data      
       })   
     }
 
@@ -26,12 +25,11 @@ app.controller('todoController', ['$scope', 'toDoService', '$http', function($sc
 
       var data = {id: todoId};
 
-      // Does deletedTodoId need to be JSON???
+      // Send todo id to be delted by server
       $http.post('/api/deleteTodo', data).then(function(response){
-       
-        // Update todos array
-        //$scope.allTodos = response.data
-        $scope.loadData();
+
+        // On success, reload list with updated todos
+        $scope.loadData();  
       })
     }
 
@@ -51,12 +49,8 @@ app.controller('todoController', ['$scope', 'toDoService', '$http', function($sc
     $http.post('/api/todo', addedToDoJson).then(function (response) {
 
       if (response.data) {
-
-        //console.log('log ' + response.data);
-
-        // Update scope with new todo
+        // On success, reload list with updated todos
          $scope.loadData();
-
       }
 
       }, function (response) {

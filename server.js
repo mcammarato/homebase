@@ -66,7 +66,7 @@ function getConnection(){
 /* Routes
 *********/
 
-// Get all users
+// Get all todos
 app.use(router);
 
 router.get('/api/todos', function(req, res){
@@ -85,7 +85,6 @@ router.post('/api/todo', function(req, res, next){
     done = req.body[i].done
   }
 
-
   // Write user to db
   const queryString = 'INSERT IGNORE INTO todos (todo, done) VALUES (?, ?)';
   getConnection().query(queryString, [todo, done], function(err, results, fields){
@@ -93,21 +92,18 @@ router.post('/api/todo', function(req, res, next){
       console.log('Failed to insert new todo ' + err)
       return
     }
-    // Log out user insert
-    console.log('inserted a new todo with id: ' + results.insertId)    
+    console.log('Inserted todo with id: ' + results.insertId)    
+
     // send user back to the client
     res.send(todo)
   })
-
 })
 
 // Delete User
-
 const delteQuery = 'DELETE FROM todos WHERE ID = ?'
-
 router.post('/api/deleteTodo', function(req, res, next){
 
-  // Body parser needs to get deleted todo ID
+  // Get deleted todo ID
   var deletedTodoId = req.body.id
 
   getConnection().query(delteQuery, [deletedTodoId], function(err, results, field){
@@ -115,10 +111,9 @@ router.post('/api/deleteTodo', function(req, res, next){
     console.log('Failed to delete todo ' + err)
     return
   }
-    console.log(results)
+    console.log('Deleted todo with id: ' + deletedTodoId)
+    res.send('deletedTodoId')
   })
-
-  //res.send()
 })
 
 
