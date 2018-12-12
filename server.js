@@ -50,12 +50,20 @@ app.use('/css', express.static(__dirname + '/client/assets/dist/css'));
 
 /* Connect to mysql
 ******************/
+// const pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'hexi fate',
+//   database: 'todos'
+// })
+
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: 'localhost',
-  user: 'root',
-  password: 'hexi fate',
-  database: 'todos'
+  host: 'us-cdbr-iron-east-01.cleardb.net',
+  user: 'bab413bf15c7a2',
+  password: '159ea796',
+  database: 'heroku_8140633911397ef'
 })
 
 // Get connection
