@@ -78,7 +78,7 @@ function getConnection(){
 app.use(router);
 
 router.get('/api/todos', function(req, res){
-  const queryString = 'SELECT * FROM todos.todos'
+  const queryString = 'SELECT * FROM todos'
 
   getConnection().query(queryString, function(err, results){
     res.send(results)
