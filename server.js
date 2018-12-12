@@ -123,7 +123,12 @@ app.use(function(req, res) {
 });
 
 // Server
-app.set('port', (process.env.PORT || 6300));
-app.listen(app.get('port'), function() {
-  console.log('Listening on ' + app.get('port'));
-});
+//app.set('port', (process.env.PORT || 6300));
+
+const PORT = process.env.PORT || 6300
+// app.listen(app.get('port'), function() {
+//   console.log('Listening on ' + app.get('port'));
+// });
+app.listen(PORT, function(){
+  console.log('server is up and listening on ' + PORT)
+})
