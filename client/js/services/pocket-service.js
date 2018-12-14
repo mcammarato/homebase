@@ -1,6 +1,6 @@
 /* Pocket Service - return last 10 articles */
 app.service('pocketService', ['$http', function ($http) {
-    var url = 'http://localhost:5000/api/pocketController';
+    var url = 'https://cammobase.azurewebsites.net/api/pocketController';
 
     this.returnPocketResults = function() {
       return $http({

@@ -1,6 +1,6 @@
 app.controller('weatherCtrl', function($scope, $http){
 
-  var url = 'http://localhost:5000/api/weatherController';
+  var url = 'https://cammobase.azurewebsites.net/api/weatherController';
 
   $http({
     method: 'GET',

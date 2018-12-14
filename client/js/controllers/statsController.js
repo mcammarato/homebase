@@ -1,5 +1,5 @@
 app.controller('statsCtrl', function($scope, $http){
-  var url = 'http://localhost:5000/api/statsController';
+  var url = 'https://cammobase.azurewebsites.net/api/statsController';
   $http({
     method: 'GET',
     url: url,
