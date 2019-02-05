@@ -1,0 +1,46 @@
+.todo-wrap {
+  display: block !important;
+}
+.todo-wrap .todos {
+  color: #fff;
+  padding: 20px 30px;
+  max-width: 460px;
+}
+.todo-wrap .todos .header {
+  font-size: 22px;
+}
+.todo-wrap .todos input {
+  display: inline-block;
+  margin-right: 20px;
+  max-width: 200px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+.todo-wrap .todos .btn-orange {
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: #E65100;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.todo-wrap .todos ul {
+  max-width: 400px;
+  margin-left: 0;
+}
+.todo-wrap .todos ul li {
+  margin: 10px 0;
+  text-transform: capitalize;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  list-style-position: inside;
+}
+.todo-wrap .todos ul li .todo {
+  margin-right: 20px;
+}
+.todo-wrap .todos ul li a {
+  float: right;
+  color: #81D4FA;
+}

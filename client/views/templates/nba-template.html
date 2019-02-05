@@ -1,21 +1,19 @@
-<section ng-controller="statsCtrl">
+<section ng-controller="statsCtrl" class="card nba">
   <div class="game-stats">
-    <div class="team-card">
-      <div data-team="{{ firstTeamAbbr }}" class="team">
-        <p class="logo"></p>
-        <div class="scores">
-          <span class="team-city">{{ firstTeamCity }}</span>
-          <span class="team-name">{{ firstTeamName }}</span>
-          <p class="team-points">{{ firstTeamPoints }}</p>
-        </div>
+    <div data-team="{{ firstTeamAbbr }}" class="team">
+      <p class="logo"></p>
+      <div class="scores">
+        <span class="team-city">{{ firstTeamCity }}</span>
+        <span class="team-name">{{ firstTeamName }}</span>
+        <p class="team-points">{{ firstTeamPoints }}</p>
       </div>
-      <div data-team="{{ secondTeamAbbr }}" class="team">
-        <p class="logo"></p>
-        <div class="scores">
-          <span class="team-city">{{ secondTeamCity }}</span>
-          <span class="team-city">{{ secondTeamName }}</span>
-          <p class="team-points">{{ secondTeamPoints }}</p>
-        </div>
+    </div>
+    <div data-team="{{ secondTeamAbbr }}" class="team">
+      <p class="logo"></p>
+      <div class="scores">
+        <span class="team-city">{{ secondTeamCity }}</span>
+        <span class="team-city">{{ secondTeamName }}</span>
+        <p class="team-points">{{ secondTeamPoints }}</p>
       </div>
     </div>
   </div>

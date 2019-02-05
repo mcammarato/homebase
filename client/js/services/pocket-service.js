@@ -26,7 +26,7 @@ app.service('pocketService', ['$http', function ($http) {
           pocketJsonArray.push(item);
         });
 
-        var pocketResult = pocketJsonArray.slice(-10);
+        var pocketResult = pocketJsonArray.slice(-5);
 
         return pocketResult;
 

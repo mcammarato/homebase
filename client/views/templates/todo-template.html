@@ -1,14 +1,14 @@
-<section class="todos" ng-controller="todoController">
-  <p>Todos</p>
+<section class="card todos" ng-controller="todoController">
+  <p class="header">Todos</p>
   <form name="frm" ng-submit="addTodo()">
     <input type="text" name="newTodo" ng-model="newTodo" required />
-    <button class="btn-brown" type="submit">Add todo</button>
+    <button class="btn-orange" type="submit">Add</button>
   </form>
-  <p>{{ todoTest }}</p>
+  <p class="todo">{{ todoTest }}</p>
   <ul>
       <li ng-repeat="a in allTodos">
-        <span data-id="{{a.id}}">{{a.todo}}</span>        
-        <a class="btn" ng-click="deleteTodo(a.id)">Delete</a>
+        <span class="todo" data-id="{{a.id}}">{{a.todo}}</span>        
+        <a class="btn" ng-click="delete Todo(a.id)">Delete</a>
       </li>
   </ul>
 </section>

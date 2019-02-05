@@ -1,6 +1,6 @@
-<section ng-controller="pocketCtrl">
-  <ul ng-repeat="p in pocketResult track by $index" class="card-block pocket">
+<section ng-controller="pocketCtrl" class="card pocket">
+  <ul ng-repeat="p in pocketResult track by $index">
     <li class="excerpt">{{ p.excerpt }}</li>
-    <li href="{{ p.given_url }}">{{ p.resolved_title }}</li>
+    <a href="{{ p.given_url }}">Read More</li>
   </ul>
 </section>

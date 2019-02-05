@@ -1,4 +1,16 @@
-<section ng-controller="weatherCtrl" class="card-block weather">
-  <p>{{ temp_f }}</p>
-  <p>{{ city }}</p>
+<section ng-controller="weatherCtrl" class="card weather">
+  <div class="grid-x grid-padding-x">
+    <div class="cell small-12 stats">
+        <a href="{{ forecast_url }}">
+            <p class="city">{{ city }}</p>
+            <i class="{{className}}"></i>
+            <p class="temp-f">{{ temp_f }}</p>
+            <p class="conditions">{{conditions}}</p>
+            <div class="feels-like">
+              <sspan>Feels Like:</sspan>
+              <span>{{ feelslike_f }}</span>
+            </div>
+        </a>
+    </div>
+  </div> 
 </section>

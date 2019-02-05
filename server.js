@@ -46,7 +46,7 @@ app.use('/images', express.static(__dirname + '/client/assets/images'));
 // Less
 app.use('/less', express.static(__dirname + '/client/assets/source/less'));
 // Dist
-app.use('/css', express.static(__dirname + '/client/assets/dist/css'));
+app.use('/dist', express.static(__dirname + '/client/assets/dist'));
 
 /* Connect to mysql
 ******************/
@@ -124,19 +124,14 @@ router.post('/api/deleteTodo', function(req, res, next){
   })
 })
 
-
 // Root - Handle serving both client side angular and server side node routes from the same app
 app.use(function(req, res) {
     res.sendFile(path.join(__dirname, '/client/views', 'index.html'));
 });
 
 // Server
-//app.set('port', (process.env.PORT || 6300));
-
 const PORT = process.env.PORT || 6300
-// app.listen(app.get('port'), function() {
-//   console.log('Listening on ' + app.get('port'));
-// });
+
 app.listen(PORT, function(){
   console.log('server is up and listening on ' + PORT)
 })
