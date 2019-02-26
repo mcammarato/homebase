@@ -4,3 +4,6 @@
 .nba-wrap .nba {
   color: #fff;
 }
+.nba-wrap .player-name {
+  display: block;
+}
