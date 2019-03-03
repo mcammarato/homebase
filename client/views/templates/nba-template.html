@@ -1,29 +1,39 @@
-<section ng-controller="statsCtrl" class="card nba">
-  <div class="game-stats">
-    <div data-team="{{ firstTeamAbbr }}" class="team">
-      <p class="logo"></p>
-      <div class="scores">
-        <span class="team-city">{{ firstTeamCity }}</span>
-        <span class="team-name">{{ firstTeamName }}</span>
-        <p class="team-points">{{ firstTeamPoints }}</p>
-      </div>
+<section ng-controller="statsCtrl">
+    <div class="card nba" ng-repeat="g in nbaGames">
+        <div class="game-info">
+            <span>{{g.arenaName}}</span>
+            <span>{{g.arenaCity}}</span>
+            <span>{{g.areaState}}</span>
+            <span>{{g.clock}}</span>
+            <span>{{g.period}}</span>
+        </div>
+        <div class='team'>
+            <div class="team-logo">
+                <i class="nba-logo {{g.hTeamTriCode}}">&nbsp;</i>
+                <div class="record">
+                    <span>{{g.hTeamWin}} &ndash;</span>
+                    <span>{{g.hTeamLoss}}</span>
+                  </div>
+            </div>      
+            <div class="team-stats">                
+                <p>{{g.hTeamScore}}</p>
+                <p>{{g.startTimeEastern}}</p>
+            </div>
+        </div>
+        <div class="team">
+            <div class="logo">
+                <i class="nba-logo {{g.vTeamTriCode}}">&nbsp;</i>
+                <div class="record">
+                    <span>{{g.vTeamWin}} &ndash;</span>
+                    <span>{{g.vTeamLoss}}</span>
+                  </div>
+            </div>            
+            <div class="team-stats">                
+                <p>{{g.vTeamWin}}</p>
+                <p>{{g.vTeamScore}}</p>
+            </div>        
+        </div>
     </div>
-    <div data-team="{{ secondTeamAbbr }}" class="team">
-      <p class="logo"></p>
-      <div class="scores">
-        <span class="team-city">{{ secondTeamCity }}</span>
-        <span class="team-city">{{ secondTeamName }}</span>
-        <p class="team-points">{{ secondTeamPoints }}</p>
-      </div>
-    </div>
-  </div>
-  <ul class="players">
-    <li ng-repeat="p in playerStats">
-      <div data-team="{{ p.TEAM_ABBREVIATION }}" class="card-block player">
-        <p class="player-name">{{ p.PLAYER_NAME }}</p>
-        <p class="team"></p>
-        <p class="player-points">{{ p.PTS }} Points</p>
-      </div>
-    </li>
-  </ul>
 </section>
+
+

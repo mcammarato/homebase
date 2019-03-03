@@ -1,40 +1,54 @@
 app.controller('statsCtrl', function($scope, $http){
-  var url = 'https://cammobase.azurewebsites.net/api/statsController';
+  //var url = 'https://cammobase.azurewebsites.net/api/statsController';
+  var url = 'http://localhost:5000/api/testdatacontroller';
   $http({
     method: 'GET',
     url: url,
   }).then(function(response) {
 
-    var data = response.data;
+    var data = response.data.games;
+    //console.log(data);
 
-    /* Game Stats */
-    var gameStats = data.items[1].items[0];
+    var games = [];
 
-    for (var i in gameStats) {
-      $scope.gameStats = gameStats[i];
-    }
+    angular.forEach(data, function(value) {
 
-    // First Team
-    $scope.firstTeamAbbr = data.items[1].items[0].teamstats[0].TEAM_ABBREVIATION;
-    $scope.firstTeamCity = data.items[1].items[0].teamstats[0].TEAM_CITY;
-    $scope.firstTeamName = data.items[1].items[0].teamstats[0].TEAM_NAME;
-    $scope.firstTeamPoints = data.items[1].items[0].teamstats[0].PTS;
-    $scope.firstTeamDate = data.items[1].items[0].teamstats[0].URL_DATE;
+      game = {};
+      var arenaName = value.arena.name;
+      var arenaCity = value.arena.city;
+      var arenaState = value.arena.stateAbbr;
+      var clock = value.clock;
+      var hTeamLoss = value.hTeam.loss;
+      var hTeamWin = value.hTeam.win;
+      var hTeamTriCode = value.hTeam.triCode.toLowerCase();;
+      var hTeamScore = value.hTeam.score;
+      var vTeamLoss = value.vTeam.loss;
+      var vTeamWin = value.vTeam.win;
+      var vTeamTriCode = value.vTeam.triCode.toLowerCase();;
+      var vTeamScore = value.vTeam.score;
+      var period = value.period.current;
+      var startTimeEastern = value.startTimeEastern
 
-    // Second Team
-    $scope.secondTeamAbbr = data.items[1].items[0].teamstats[1].TEAM_ABBREVIATION;
-    $scope.secondTeamCity = data.items[1].items[0].teamstats[1].TEAM_CITY;
-    $scope.secondTeamName = data.items[1].items[0].teamstats[1].TEAM_NAME;
-    $scope.secondTeamPoints = data.items[1].items[0].teamstats[1].PTS;
-    $scope.secondTeamDate = data.items[1].items[0].teamstats[1].URL_DATE;
+      game['arenaName'] = arenaName;
+      game['arenaCity'] = arenaCity;
+      game['arenaState'] = arenaState;
+      game['clock'] = clock;
+      game['hTeamLoss'] = hTeamLoss;
+      game['hTeamWin'] = hTeamWin;
+      game['hTeamTriCode'] = hTeamTriCode;
+      game['hTeamScore'] = hTeamScore;
+      game['vTeamLoss'] = vTeamLoss;
+      game['vTeamWin'] = vTeamWin;
+      game['vTeamTriCode'] = vTeamTriCode;
+      game['vTeamScore'] = vTeamScore;
+      game['period'] = period;
+      game['startTimeEastern'] = startTimeEastern;
+      
+      games.push(game);
+    });
+    $scope.nbaGames = games;
 
-
-    /* Player Stats */
-    var playerStats = data.items[0].items[0];
-
-    for (var i in playerStats) {
-      $scope.playerStats = playerStats[i];
-    }
+    //console.log(games);
 
   }, function(response) {
     console.log(response.statusText);
