@@ -1,6 +1,22 @@
 .pocket-wrap {
-  display: block !important;
+  display: block;
 }
 .pocket-wrap .pocket {
   color: #fff;
+}
+.pocket-wrap .pocket .pocket-list {
+  margin: 0;
+}
+.pocket-wrap .pocket .pocket-list .card {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  width: 350px;
+  max-width: 350px;
+}
+.pocket-wrap .pocket .pocket-list .card p {
+  color: #fff;
+}
+.pocket-wrap .pocket .pocket-list .card a {
+  color: #81d4fa;
 }

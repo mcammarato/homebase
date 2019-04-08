@@ -13,7 +13,7 @@ app.controller('statsCtrl', function($scope, $http){
 
     angular.forEach(data, function(value) {
 
-      game = {};
+      game = {};  
       var arenaName = value.arena.name;
       var arenaCity = value.arena.city;
       var arenaState = value.arena.stateAbbr;

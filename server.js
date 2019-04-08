@@ -48,6 +48,7 @@ app.use('/less', express.static(__dirname + '/client/assets/source/less'));
 // Dist
 app.use('/dist', express.static(__dirname + '/client/assets/dist'));
 
+
 /* Connect to mysql
 ******************/
 // const pool = mysql.createPool({
