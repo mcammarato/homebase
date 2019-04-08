@@ -1,7 +1,7 @@
 app.controller('weatherCtrl', function($scope, $http){
 
-  //var url = 'https://cammobase.azurewebsites.net/api/weatherController';
-  var url = 'http://localhost:5000/api/weathercontroller';
+  var url = 'https://cammobase.azurewebsites.net/api/weatherController';
+  //var url = 'http://localhost:5000/api/weathercontroller';
 
   var geoLocationUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=40.84093,-74.301815&key=AIzaSyBlS1hXhwR2pmGd2lmRqtCwZ7Zt90rRR5M';
 
